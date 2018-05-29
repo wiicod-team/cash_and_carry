@@ -1,0 +1,23 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+<ion-nav-view name="menuContent"></ion-nav-view>
+<div class="tabs-striped tabs-color-assertivee">
+  <div class="tabs">
+    <a class="tab-item" ng-class="{'active':state=='app.home'}" ng-click="state='app.home'" ui-sref="app.home">
+      <i class="icon ion-home"></i>
+      Accueil
+    </a>
+    <a class="tab-item" ng-class="{'active':state=='app.command-list'}" ng-click="state='app.command-list'" ui-sref="app.command-list">
+      <i class="icon ion-clipboard"></i>
+      Commandes
+    </a>
+    <a class="tab-item" ng-click="logout()">
+      <i class="icon ion-android-exit"></i>
+      Statistiques
+    </a>
+  </div>
+</div>

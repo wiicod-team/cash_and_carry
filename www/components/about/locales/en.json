@@ -1,0 +1,12 @@
+{
+  "about_comp":{
+    "suggestion":"Suggestions",
+    "content":"Content of your suggestion",
+    "success_title":"Saved suggestion",
+    "error_title":"Failed to save",
+    "success_message":"Thank you for your contribution",
+    "error_message":"Please try again",
+    "email":"Email",
+    "save":"Save"
+  }
+}

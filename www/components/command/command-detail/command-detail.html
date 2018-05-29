@@ -1,0 +1,27 @@
+
+<ion-view view-title="Detail commande ">
+  <ion-content class="padding">
+    <div class="list card">
+
+      <div class="item item-divider">
+        <span class="pull-left">Facture</span>
+        <span class="pull-right">#{{bills[0].bill.id}}</span>
+      </div>
+
+      <a class="item">
+        <span class="pull-left">Client</span>
+        <span class="pull-right">{{bills[0].bill.customer.name}}</span>
+      </a>
+
+      <div class="item item-divider">
+        <span class="pull-left">Produits</span>
+      </div>
+      <a  class="item" ng-repeat="b in bills">
+        <span class="pull-left">{{b.product_saletype.product.name}}</span>
+        <span class="pull-right">{{b.product_price_was|priceFormat}} Fcfa</span>
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>

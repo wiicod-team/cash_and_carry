@@ -1,0 +1,28 @@
+<ion-view onscroll="false">
+  <ion-content id="tickets" class="padding" overflow-scroll="false">
+
+    <form class="form-signin">
+      <h2 class="form-signin-heading text-center">
+        <img src="img/cc1.png" alt="" style="width: 60%">
+      </h2>
+      <div class="list list-inset" style="margin-top:0">
+        <label class="item item-input item-stacked-label">
+          <input type="text" ng-model="user.email" placeholder="Login">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <input type="password" ng-model="user.password" placeholder="Mot de passe">
+        </label>
+
+        <div class="item" style="padding-top: 1px;padding-bottom: 1px">
+          <button class="button button-block button-primary" translate ng-click="doLogin(user)">
+            Connexion
+          </button>
+        </div>
+      </div>
+    </form>
+
+  </ion-content>
+  <div class="bar bar-footer" style="background: #000;color:#e30101">
+    <div class="title">wiicod &copy;</div>
+  </div>
+</ion-view>

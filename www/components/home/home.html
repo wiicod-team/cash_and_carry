@@ -1,0 +1,59 @@
+
+<ion-view view-title="{{user.seller.depot.name}}">
+  <ion-content class="padding">
+
+    <img src="{{user.seller.depot.banner_picture}}" alt="" style="width: 100%;height: 180px">
+
+    <div class="list card">
+
+      <div class="item item-divider">
+        Service du : <strong>{{current|date:'dd MMMM yyyy'}}</strong>
+      </div>
+
+      <a class="item item-icon-left">
+        <i class="icon ion-person"></i>
+        <strong class="red-value">{{user.full_name}}</strong>
+      </a>
+
+      <a  class="item item-icon-left">
+        <i class="icon ion-cash"></i>
+        C.A : <strong class="red-value">{{ca|priceFormat}} Fcfa</strong>
+      </a>
+
+      <a  class="item item-icon-left hide">
+        <i class="icon ion-clipboard"></i>
+        <span class="red-value">{{commande_memo}} </span>Facture(s) en mémo
+      </a>
+      <a  class="item item-icon-left hide">
+        <i class="icon ion-stats-bars"></i>
+        Statistiques
+      </a>
+
+    </div>
+
+    <div class="list card">
+
+      <div class="item item-divider">
+        Cash & Carry
+      </div>
+
+      <a ui-sref="app.suggestion" class="item item-icon-left" style="border-top:none">
+        <i class="icon ion-email"></i>
+        Suggestions
+      </a>
+
+      <a ui-sref="app.about" class="item item-icon-left">
+        <i class="icon ion-information"></i>
+        A propos
+      </a>
+
+      <a  class="item item-icon-left" ng-click="logout()">
+        <i class="icon ion-android-exit"></i>
+        Deconnexion
+      </a>
+    </div>
+  </ion-content>
+  <div class="menu-button" ui-sref="app.command-add({depot:user.seller.depot.id,saletype:saletypes[0].id})">
+    <i class="fa fa-plus"></i>
+  </div>
+</ion-view>

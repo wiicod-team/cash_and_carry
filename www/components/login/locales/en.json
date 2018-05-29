@@ -1,0 +1,16 @@
+{
+  "login_comp":{
+    "authentification":"Authentification",
+    "password":"Mot de passe",
+    "email":"Email",
+    "login":"Connexion",
+    "signin":"M'inscrire"
+  },
+  "login_modal_comp":{
+    "authentification":"Authentification",
+    "password":"Mot de passe",
+    "email":"Email",
+    "login":"Connexion",
+    "signin":"M'inscrire"
+  }
+}

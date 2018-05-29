@@ -1,0 +1,12 @@
+{
+  "suggestions_comp":{
+    "suggestion":"Suggestions",
+    "content":"Contenu de votre suggestion",
+    "success_title":"Suggestion enregistrée",
+    "error_title":"Echec de l'enregistrement",
+    "success_message":"Merci pour votre contribution",
+    "error_message":"Merci de réessayer",
+    "email":"Email",
+    "save":"Enregistrer"
+  }
+}

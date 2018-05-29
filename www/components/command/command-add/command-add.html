@@ -1,0 +1,55 @@
+
+<ion-view view-title="Nouvelle commande">
+  <ion-content class="padding">
+    <label class="item item-input item-select" style="padding: 5px 16px;">
+      <div class="input-label">
+        Table
+      </div>
+      <select ng-model="commande.customer_id" ng-options="c.id as c.name for c in customers">
+        <option value="">N°</option>
+      </select>
+    </label>
+
+    <div class="item" style="padding: 5px 16px;" ng-if="commande.produits.length>0">
+      <span class="title pull-left" style="line-height: 31px;">Total : <strong class="red-value">{{commande.total|priceFormat}} Fcfa</strong></span>
+      <button class="button button-small pull-right button-primary" ng-click="buy()"><strong>Valider</strong></button>
+    </div>
+
+    <div class="list card" style="margin-bottom: 60px;">
+
+      <div ng-repeat="p in products |orderBy:'-category':true">
+        <div class="item item-divider">
+          {{p.category}}
+        </div>
+        <a class="item"
+           ng-repeat="item in p.products |orderBy:'-product_saletype.product.name':true"
+           ng-class="{'active':item.command_quantity>0}"
+          style="padding: 5px 16px;"
+          >
+          <div class="row">
+            <div class="col-75" ng-click="addProduct(item)">
+              {{item.product_saletype.product.name|limitTo:30}}
+              <span ng-if="item.command_quantity>0">({{item.command_quantity|priceFormat}})</span>
+            </div>
+            <div class="col-20" ng-click="addProduct(item)">
+              <span class="pull-right">{{item.product_saletype.price|priceFormat}}</span>
+            </div>
+            <div class="col-10">
+              <span ng-if="item.command_quantity>0" ng-click="removeProduct(item)"><i class="fa fa-minus-square"></i></span>
+            </div>
+          </div>
+
+
+
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="bar bar-fixe hide">
+
+    </div>
+  </ion-content>
+
+</ion-view>
