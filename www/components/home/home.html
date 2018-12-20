@@ -15,7 +15,7 @@
         <strong class="red-value">{{user.full_name}}</strong>
       </a>
 
-      <a  class="item item-icon-left">
+      <a  class="item item-icon-left" ng-if="can_sell">
         <i class="icon ion-cash"></i>
         C.A : <strong class="red-value">{{ca|priceFormat}} Fcfa</strong>
       </a>
@@ -53,7 +53,7 @@
       </a>
     </div>
   </ion-content>
-  <div class="menu-button" ui-sref="app.command-add({depot:user.seller.depot.id,saletype:saletypes[0].id})">
+  <div class="menu-button"  ng-if="can_sell" ui-sref="app.command-add({depot:user.seller.depot.id,saletype:saletypes[0].id})">
     <i class="fa fa-plus"></i>
   </div>
 </ion-view>

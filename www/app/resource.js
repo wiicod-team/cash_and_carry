@@ -12,6 +12,9 @@ resources
   .factory('Categories',function(API){
     return API.service('categories').withHttpConfig({ cache: true});
   })
+  .factory('Cashiers',function(API){
+    return API.service('cashiers').withHttpConfig({ cache: true});
+  })
   .factory('Customers',function(API){
     return API.service('customers').withHttpConfig({ cache: true});
   })

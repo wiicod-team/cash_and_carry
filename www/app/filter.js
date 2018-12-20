@@ -12,19 +12,19 @@ filter
     return function(statut) {
       if(statut=='expired')
       {
-        return $translate.instant("HISTORIQUE.ARG_29");
+        return "Echue";
       }
       else if(statut=='waiting_customer_approval'){
-        return $translate.instant("HISTORIQUE.ARG_31");
+        return "En attente visa client";
       }
       else if(statut=='waiting_cashier_approval'){
-        return $translate.instant("HISTORIQUE.ARG_32");
+        return "En attente visa caisse";
       }
       else if(statut=='canceled'){
-        return $translate.instant("HISTORIQUE.ARG_33");
+        return "Extournée";
       }
       else if(statut=='paided'){
-        return $translate.instant("HISTORIQUE.ARG_28");
+        return "Payée";
       }
 
     };

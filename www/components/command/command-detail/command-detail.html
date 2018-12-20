@@ -12,15 +12,36 @@
         <span class="pull-left">Client</span>
         <span class="pull-right">{{bills[0].bill.customer.name}}</span>
       </a>
+      <a class="item">
+        <span class="pull-left">Statut</span>
+        <span class="pull-right red-value">{{statut|billStatus}}</span>
+      </a>
 
       <div class="item item-divider">
         <span class="pull-left">Produits</span>
+        <span class="pull-right">{{bills[0].bill.amount|priceFormat}} Fcfa</span>
       </div>
       <a  class="item" ng-repeat="b in bills">
         <span class="pull-left">{{b.product_saletype.product.name}}</span>
         <span class="pull-right">{{b.product_price_was|priceFormat}} Fcfa</span>
       </a>
 
+    </div>
+
+    <div class="list">
+      <div class="item" style="padding:0;">
+        <div class="button-bar">
+          <a ng-click="openPDF(bills[0].bill.pdf_before_customer)" ng-if="bills[0].bill.pdf_before_customer!=undefined && bills[0].bill.pdf_after_cashier==undefined" class="class button button-primary">
+            PDF
+          </a>
+          <a  ng-click="openPDF(bills[0].bill.pdf_after_cashier)" ng-if="bills[0].bill.pdf_after_cashier!=undefined" class="class button button-primary">
+            PDF
+          </a>
+          <a href="" class="class button button-default" ng-if="can_sign && (statut==1 || statut==2)" ng-click="cashIn(bills[0].bill)">
+            Encaisser
+          </a>
+        </div>
+      </div>
     </div>
 
   </ion-content>

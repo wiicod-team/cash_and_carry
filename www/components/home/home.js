@@ -7,6 +7,7 @@ app
   .controller("HomeCtrl",function($scope,Auth,Bills,$interval,$cookies,Depots,$state,$ionicLoading){
     show($ionicLoading);
     var j=new Date();
+    $scope.can_sell=false;
     var now=(j.getYear()+1900)+'-'+(j.getMonth()+1);
     var today=now+"-"+ j.getDate()+" 00:00:00,"+now+"-"+j.getDate()+" 23:59:59";
     $scope.current=moment(new Date());
@@ -20,6 +21,9 @@ app
       Auth.getContext().then(function(data){
         console.log(data);
         $scope.user=data;
+        if($scope.user.seller!=undefined){
+          $scope.can_sell=true;
+        }
         //verification si la caisse du depot est ouverte
         $scope.open=$scope.user.seller.depot.is_open;
         console.log($scope.open,"open");

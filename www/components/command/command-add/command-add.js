@@ -134,9 +134,9 @@ app
             //console.log(i,temp);
             if(i==temp.length){
               // changement du statut de la facture
-              f.status=2;
-              f.put().then(function(f){
-                //console.log("update",f);
+              f.status=1;
+              f.put().then(function(fe){
+                console.log(fe);
               },function(q){
                 console.log(q);
               });

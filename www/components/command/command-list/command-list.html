@@ -28,7 +28,7 @@
 
 
   </ion-content>
-  <div class="menu-button" ui-sref="app.command-add({depot:user.seller.depot.id,saletype:saletypes[0].id})">
+  <div class="menu-button" ng-if="can_sell" ui-sref="app.command-add({depot:user.seller.depot.id,saletype:saletypes[0].id})">
     <i class="fa fa-plus"></i>
   </div>
 </ion-view>
